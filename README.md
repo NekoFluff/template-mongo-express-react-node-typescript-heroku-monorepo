@@ -53,33 +53,45 @@ Now you should be able to see the react app working!
 
 ### Create heroku apps
 
-- Create an app for the client (`heroku create my-test-client-app --remote heroku-test-client`)
-- Create an app for the server (`heroku create my-test-server-app --remote heroku-test-server`)
+- Create an app for the client
+`heroku create my-test-client-app --remote heroku-test-client`
+- Create an app for the server
+`heroku create my-test-server-app --remote heroku-test-server`
 
 ### Add buildpacks for the client
 
-- Add the monorepo buildpack to the client (`heroku buildpacks:set https://github.com/lstoll/heroku-buildpack-monorepo --app my-test-client-app --index 1`)
-- Add the create-react-app buildpack to the client (`heroku buildpacks:set https://github.com/mars/create-react-app-buildpack.git --app my-test-client-app --index 2`)
+- Add the monorepo buildpack to the client
+`heroku buildpacks:set https://github.com/lstoll/heroku-buildpack-monorepo --app my-test-client-app --index 1`
+- Add the create-react-app buildpack to the client
+`heroku buildpacks:set https://github.com/mars/create-react-app-buildpack.git --app my-test-client-app --index 2`
 
 - Note: You can actually ignore the `--index` flag as long as you add the `monorepo` buildpack first then the `create-react-app` buildpack second. ORDER MATTERS.
 
 ### Add buildpacks for the server
 
-- Add the Multi-profile buildpack to the server (`heroku buildpacks:set https://github.com/heroku/heroku-buildpack-multi-procfile --app my-test-server-app --index 1`)
-- Add the Multi-profile buildpack to the server (`heroku buildpacks:set heroku/nodejs --app my-test-server-app --index 2`)
+- Add the Multi-profile buildpack to the server
+`heroku buildpacks:set https://github.com/heroku/heroku-buildpack-multi-procfile --app my-test-server-app --index 1`)
+- Add the Multi-profile buildpack to the server
+`heroku buildpacks:set heroku/nodejs --app my-test-server-app --index 2`
 
 ### Add the config variables for the client
 
-- Set the PROCFILE environment variable for the server (`heroku config:set API_URL=https://my-test-server-app.herokuapp.com --app my-test-client-app`) (...for the proxy to work on prod)
-- Set the MONGO_CONNECTION_URL environment variable for the server (`heroku config:set APP_BASE=packages/client --app my-test-client-app`) (used by the monorepo buildpack)
+- Set the PROCFILE environment variable for the server ...for the proxy to work on prod
+`heroku config:set API_URL=https://my-test-server-app.herokuapp.com --app my-test-client-app`
+- Set the MONGO_CONNECTION_URL environment variable for the server (used by the monorepo buildpack)
+`heroku config:set APP_BASE=packages/client --app my-test-client-app`
 
 ### Add the config variables for the server
 
-- Set the PROCFILE environment variable for the server (`heroku config:set PROCFILE=packages/server/Procfile --app my-test-server-app`)
-- Set the MONGO_CONNECTION_URL environment variable for the server (`heroku config:set MONGO_CONNECTION_URL=<your mongodb connection url> --app my-test-server-app`)
+- Set the PROCFILE environment variable for the server
+`heroku config:set PROCFILE=packages/server/Procfile --app my-test-server-app`
+- Set the MONGO_CONNECTION_URL environment variable for the server
+`heroku config:set MONGO_CONNECTION_URL=<your mongodb connection url> --app my-test-server-app`
 
-- Upload the server the heroku (`git push heroku-test-client master`)
-- Upload the client to heroku (`git push heroku-test-server master`)
+- Upload the server the heroku
+`git push heroku-test-client master`
+- Upload the client to heroku
+`git push heroku-test-server master`
 
 You're done! Now you should be able to visit the your heroku app and it should all be working!
 
