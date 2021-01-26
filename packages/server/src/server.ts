@@ -33,6 +33,12 @@ app.use(bodyParser.urlencoded({ extended: true }));
 app.use(cors());
 
 app.get("/items", async (req: any, res: any) => {
+  res.send(
+    "Go to /items to get some data from sample item data from your mongodb database. This was inserted when the server started."
+  );
+});
+
+app.get("/items", async (req: any, res: any) => {
   const itemRepository = new ItemRepository();
   let items = await itemRepository.getItems();
   res.send(items);

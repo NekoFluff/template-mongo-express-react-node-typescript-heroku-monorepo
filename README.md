@@ -78,8 +78,8 @@ Now you should be able to see the react app working!
 - Set the PROCFILE environment variable for the server (`heroku config:set PROCFILE=packages/server/Procfile --app my-test-server-app`)
 - Set the MONGO_CONNECTION_URL environment variable for the server (`heroku config:set MONGO_CONNECTION_URL=<your mongodb connection url> --app my-test-server-app`)
 
-- Upload the server the heroku ()
-- Upload the client to heroku
+- Upload the server the heroku (`git push heroku-test-client master`)
+- Upload the client to heroku (`git push heroku-test-server master`)
 
 You're done! Now you should be able to visit the your heroku app and it should all be working!
 

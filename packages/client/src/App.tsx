@@ -23,6 +23,11 @@ function App() {
     <div className="App">
       <header className="App-header">
         <Container>
+          {items.length === 0 ? (
+            <div style={{ color: "white" }}>
+              Nothing loaded. The server doesn't seem to be working?
+            </div>
+          ) : null}
           {items.map((item) => {
             return <ItemCard key={item._id} item={item}></ItemCard>;
           })}
