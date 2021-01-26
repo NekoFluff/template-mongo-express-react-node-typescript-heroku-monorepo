@@ -1,0 +1,31 @@
+{
+  "name": "@monorepo/server",
+  "version": "0.0.0",
+  "description": "NodeJS server with Express and Typescript",
+  "main": "src/main.js",
+  "scripts": {
+    "start": "npm run build && npm run server",
+    "server": "node ./build/server.js",
+    "dev": "tsc-watch --onSuccess \"node ./build/server.js\"",
+    "test-feature": "tsc-watch --onSuccess \"node ./build/test-feature.js\"",
+    "build": "tsc --build",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "MIT",
+  "devDependencies": {
+    "@types/node": "^14.14.22",
+    "tsc-watch": "^4.2.9"
+  },
+  "dependencies": {
+    "@types/mongodb": "^3.6.3",
+    "body-parser": "^1.19.0",
+    "cors": "^2.8.5",
+    "debug": "^4.3.1",
+    "dotenv": "^8.2.0",
+    "express": "^4.17.1",
+    "mongodb": "^3.6.3",
+    "morgan": "^1.10.0",
+    "typescript": "^4.0.3"
+  }
+}

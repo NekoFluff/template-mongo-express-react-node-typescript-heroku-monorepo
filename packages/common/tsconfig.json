@@ -1,0 +1,12 @@
+{
+  "compilerOptions": {
+    /* Basic Options */
+    "declaration": true,
+    "declarationMap": true,
+    "sourceMap": true,
+    "composite": true,
+    "outDir": "./build",
+    "rootDir": "./src"
+  },
+  "include": ["src"]
+}
