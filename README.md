@@ -42,7 +42,7 @@ Create a database named `sample-db` with an `items` collection. This is used by 
 
 Now you should be able to see the react app working!
 
-## 4. Add this code to your own github repo
+## 4. Add this code to your own github repo (optional)
 
 - If you don't now know how, now's a good time as ever to find out how to add code to a github repo.
 - There are plenty of online guides.
@@ -65,20 +65,20 @@ Now you should be able to see the react app working!
 
 ### Add buildpacks for the server
 
-- Add the Multi-profile buildpack to the server `heroku buildpacks:set https://github.com/heroku/heroku-buildpack-multi-procfile --app my-test-server-app --index 1`
-- Add the Multi-profile buildpack to the server `heroku buildpacks:set heroku/nodejs --app my-test-server-app --index 2`
+- Add the Multi-profile buildpack to the server (`heroku buildpacks:set https://github.com/heroku/heroku-buildpack-multi-procfile --app my-test-server-app --index 1`)
+- Add the Multi-profile buildpack to the server (`heroku buildpacks:set heroku/nodejs --app my-test-server-app --index 2`)
 
 ### Add the config variables for the client
 
 - Set the PROCFILE environment variable for the server (`heroku config:set API_URL=https://my-test-server-app.herokuapp.com --app my-test-client-app`) (...for the proxy to work on prod)
-- Set the MONGO_CONNECTION_URL environment variable for the server `heroku config:set APP_BASE=packages/client --app my-test-client-app` (used by the monorepo buildpack)
+- Set the MONGO_CONNECTION_URL environment variable for the server (`heroku config:set APP_BASE=packages/client --app my-test-client-app`) (used by the monorepo buildpack)
 
 ### Add the config variables for the server
 
-- Set the PROCFILE environment variable for the server `heroku config:set PROCFILE=packages/server/Procfile --app my-test-server-app`
-- Set the MONGO_CONNECTION_URL environment variable for the server `heroku config:set MONGO_CONNECTION_URL=<your mongodb connection url> --app my-test-server-app`
+- Set the PROCFILE environment variable for the server (`heroku config:set PROCFILE=packages/server/Procfile --app my-test-server-app`)
+- Set the MONGO_CONNECTION_URL environment variable for the server (`heroku config:set MONGO_CONNECTION_URL=<your mongodb connection url> --app my-test-server-app`)
 
-- Upload the server the heroku
+- Upload the server the heroku ()
 - Upload the client to heroku
 
 You're done! Now you should be able to visit the your heroku app and it should all be working!
