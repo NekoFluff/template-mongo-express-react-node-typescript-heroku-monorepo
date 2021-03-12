@@ -1,7 +1,7 @@
 import { Instantiable, MongoDBDocument } from "@monorepo/common";
 
 export default interface ICollection<T extends MongoDBDocument> {
-  insert(items: Array<T>): Promise<any>;
+  create(items: Array<T>): Promise<any>;
   find<T2 = T>(
     filter: any,
     overrideClassType?: Instantiable<T2>
