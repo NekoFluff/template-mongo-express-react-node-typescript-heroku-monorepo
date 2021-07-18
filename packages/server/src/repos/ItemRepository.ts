@@ -14,6 +14,6 @@ export default class ItemRepository extends Collection<Item> {
   }
 
   async insertItems(items: Item[]): Promise<any> {
-    return super.insert(items);
+    return super.create(items);
   }
 }

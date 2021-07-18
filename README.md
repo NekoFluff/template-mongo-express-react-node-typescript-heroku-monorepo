@@ -39,12 +39,12 @@ Create a database named `sample-db` with an `items` collection. This is used by 
 ## 3. Start up the Development environment!
 
 - Open up three terminals from the root folder
-- Run `npm run start-common-dev` in one terminal
-- Run `npm run start-server-dev` in one terminal
-- Run `npm run start-client-dev` in one terminal
+- Run `yarn run start-common-dev` in one terminal
+- Run `yarn run start-server-dev` in one terminal
+- Run `yarn run start-client-dev` in one terminal
 
 Now you should be able to see the react app working!
-
+`http://localhost:3000/items`
 
 ## 4. Add this code to your own github repo (optional)
 
@@ -98,7 +98,7 @@ Now you should be able to see the react app working!
 
 `heroku config:set API_URL=https://my-test-server-app.herokuapp.com --app my-test-client-app`
 
-- Set the MONGO_CONNECTION_URL environment variable for the server (used by the monorepo buildpack)
+- Set the APP_BASE environment variable for the client (used by the monorepo buildpack)
 
 `heroku config:set APP_BASE=packages/client --app my-test-client-app`
 
